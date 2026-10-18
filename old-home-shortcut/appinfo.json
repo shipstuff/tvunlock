@@ -1,0 +1,13 @@
+{
+  "id": "local.tvrefresh.lghome",
+  "version": "1.0.1",
+  "vendor": "TV Refresh",
+  "type": "web",
+  "main": "index.html",
+  "title": "LG Home",
+  "appDescription": "Return to the original LG home screen.",
+  "icon": "icon.png",
+  "bgColor": "#101010",
+  "resolution": "1920x1080",
+  "disableBackHistoryAPI": true
+}

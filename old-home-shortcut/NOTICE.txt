@@ -1,0 +1,3 @@
+The helper code is MIT licensed under the repository's LICENSE.
+Its LG Home icon comes from the launcher fork's LG input icons; see
+../launcher/THIRD_PARTY_NOTICES.md. LG and webOS are LG trademarks.

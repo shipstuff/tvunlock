@@ -1,0 +1,24 @@
+{
+  "description": "Reference only. Availability and unused-app preferences must be checked on each TV. This file is never applied automatically.",
+  "testedModel": "OLED65B2AUA",
+  "testedFirmware": "33.31.75",
+  "testedSdk": "10.3.2",
+  "adSettings": {
+    "general": ["homePromotion", "screenSaverAd"],
+    "other": ["contentRecommendation"],
+    "option": ["livePromotion", "livePlus"]
+  },
+  "optionalAppsToDiscuss": [
+    "youtube.leanback.ytv.v1", "tv.twitch.tv.starshot.lg", "com.crunchyroll.webapp",
+    "com.fubotv.app", "com.plutotv.app", "com.miniclip.eightballpool",
+    "com.lgshop.app", "com.lgtravel.app", "com.lgtvod.us.app",
+    "com.twin.app.audiochannel", "com.twin.app.gamingportal", "com.volley.lgshell",
+    "epoxyaisports", "shortcutcopilot", "webos.day"
+  ],
+  "retailDemoDirectory": "/mnt/lg/appstore/preload/storedemo",
+  "notes": [
+    "Do not equate installed with unused. Ask the TV owner which apps to retain.",
+    "Retail demo assets may occupy substantial space; verify their role and the owner's backup preference before deletion.",
+    "Do not remove Gallery assets, screensaver protection, system partitions, pairing data, or streaming-app caches as a generic cleanup step."
+  ]
+}

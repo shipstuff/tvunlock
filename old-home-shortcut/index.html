@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>LG Home</title>
+<style>body{margin:0;background:#101010;color:#eee;font:32px sans-serif;display:flex;align-items:center;justify-content:center;height:100vh}</style>
+<div id="message">Opening LG Home…</div>
+<script>
+(function () {
+  var launching = false;
+  var bridge;
+  function launchHome() {
+    bridge = new PalmServiceBridge();
+    bridge.onservicecallback = function (response) {
+      var data = JSON.parse(response);
+      launching = false;
+      if (data.returnValue === false) {
+        document.getElementById('message').textContent = 'Could not open LG Home. Press Home to return to Launcher.';
+      } else {
+        window.close();
+      }
+    };
+    bridge.call('luna://com.webos.applicationManager/launch', JSON.stringify({id:'com.webos.app.home'}));
+  }
+  function openHome() {
+    if (launching) return;
+    launching = true;
+    bridge = new PalmServiceBridge();
+    bridge.onservicecallback = function (response) {
+      var data = JSON.parse(response);
+      if (data.returnValue === false) {
+        launching = false;
+        document.getElementById('message').textContent = 'Could not open LG Home. Press Home to return to Launcher.';
+      } else {
+        launchHome();
+      }
+    };
+    bridge.call('luna://org.webosbrew.hbchannel.service/exec', JSON.stringify({command:'touch /tmp/tvrefresh-allow-lg-home'}));
+  }
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) openHome(); });
+  document.addEventListener('webOSRelaunch', openHome);
+  openHome();
+})();
+</script>

@@ -1,0 +1,10 @@
+{
+  "name": "tvunlock",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests && node --test home-router/core.test.cjs tests/remote.test.cjs",
+    "privacy": "python3 tools/privacy.py",
+    "build": "python3 tools/build.py"
+  }
+}
